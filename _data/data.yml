@@ -59,7 +59,7 @@ experiences:
 
           - Azure Devops
           - Swagger
-          - asp dotnet core
+          - ASP.NET Core
           - Sql Server
 
         Services for Independent Living
@@ -71,8 +71,8 @@ experiences:
           Developed a web app to manage donor contact information. Pro bono.
 
           - React
-          - asp dotnet core
-          - sql lite
+          - ASP.NET Core
+          - SQL Lite
 
         The Cleveland Clinic
         {: .contract-company }
@@ -92,7 +92,7 @@ experiences:
       details: |
         Maintained a legacy system designed to support rail road logistics and damage tracking.
           - jQuery
-          - MVC .Net
+          - MVC.NET
           - Sql Server
 
     - role: Full Stack Developer
@@ -102,7 +102,7 @@ experiences:
         Worked on an array of projects, including bussiness apps, point of sale / ecommerce web applications, and cross-platform mobile apps.
           - Angular
           - Typescript
-          - MVC .Net
+          - MVC.NET
           - Sql Server
 
 skills:
