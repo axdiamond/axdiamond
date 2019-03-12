@@ -60,7 +60,6 @@ experiences:
           - Sql Server
           {: .position-tech}
 
-
         Services for Independent Living
         {: .contract-company }
 
@@ -74,17 +73,18 @@ experiences:
         The Cleveland Clinic
         {: .contract-company }
 
-          Refaced public facing patient scheduling tool. Maintained and improved Sitecore based CMS
-
+          Refaced public appointments system UI to match branding and be Aria friendly.
+          Wrote integration with LiveEngage API for data importing and analytics.
           - Sitecore
-          - Sass
+          - Less
           - C#
           {: .position-tech}
 
     - role: Software Engineer
       subtitle: Buckeye Mountain - September 2016 - March 2017
       details: |
-        Maintained a legacy system designed to support rail road logistics and damage tracking.
+        Damage tracking and billing software used by major railroads.
+        Diagnosed and fixed issues in architecture  leading to poor performance
           - jQuery
           - MVC.NET
           - Sql Server
@@ -93,7 +93,8 @@ experiences:
     - role: Full Stack Developer
       subtitle: Wentworth Solutions - March 2015 - September 2016
       details: |
-        Worked on an array of projects, including bussiness apps, point of sale / ecommerce web applications, and cross-platform mobile apps.
+        Worked on an array of projects, including bussiness apps, point of sale / ecommerce web applications, 
+        and cross-platform mobile apps.
           - Angular
           - Typescript
           - MVC.NET
