@@ -195,11 +195,23 @@ p {
         top: 0;
         color: $text-grey;
     }
+    .subtitle {
+        color: $text-grey;
+        font-size: 13px;
+    }
     .company, .university {
         margin-bottom: 10px;
         color: $text-grey;
     }
-
+    .contracts {
+        margin-left: 30px;
+    }
+    .details {
+        margin-top: -10px;
+    }
+    .position-tech {
+        margin-top: -10px;
+    }
     .project-title {
         font-size: 16px;
         font-weight: 400;

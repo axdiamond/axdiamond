@@ -41,69 +41,64 @@ education:
 
 experiences:
     - role: Senior Technical Consultant
-      time: March 2017 - Present
-      company: Robert Half Technologies
+      subtitle: Robert Half Technologies - March 2017 - Present
       details: |
         Placed the following clients for short to medium-term projects.
         Presented at company sponsored meetups. 
-
+      contracts: |
         Covia
         {: .contract-company }
-
-        November 2017 - Present
-        {: .contract-date }
 
           Architected and implimented system for truck loading automation.
           Assisted in migrating to a new ERP.
           Standardized the team's workflows around best practices such as CI/CD, pull requests, and unit testing.
+          {: .position-details}
 
           - Azure Devops
           - Swagger
           - ASP.NET Core
           - Sql Server
+          {: .position-tech}
+
 
         Services for Independent Living
         {: .contract-company }
-
-        September 2018 - January 2019
-        {: .contract-date }
 
           Developed a web app to manage donor contact information. Pro bono.
 
           - React
           - ASP.NET Core
           - SQL Lite
+          {: .position-tech}
 
         The Cleveland Clinic
         {: .contract-company }
-
-        March 2017 - November 2017
-        {: .contract-date }
 
           Refaced public facing patient scheduling tool. Maintained and improved Sitecore based CMS
 
           - Sitecore
           - Sass
           - C#
+          {: .position-tech}
 
     - role: Software Engineer
-      time: September 2016 - March 2017
-      company: Buckeye Mountain
+      subtitle: Buckeye Mountain - September 2016 - March 2017
       details: |
         Maintained a legacy system designed to support rail road logistics and damage tracking.
           - jQuery
           - MVC.NET
           - Sql Server
+          {: .position-tech}
 
     - role: Full Stack Developer
-      time: March 2015 - September 2016
-      company: Wentworth Solutions
+      subtitle: Wentworth Solutions - March 2015 - September 2016
       details: |
         Worked on an array of projects, including bussiness apps, point of sale / ecommerce web applications, and cross-platform mobile apps.
           - Angular
           - Typescript
           - MVC.NET
           - Sql Server
+          {: .position-tech}
 
 skills:
     title: Skills &amp; Proficiency
