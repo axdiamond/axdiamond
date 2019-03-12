@@ -4,7 +4,7 @@ sidebar:
 
     # Profile information
     name: Andrew Diamond
-    tagline: Professional Mistake Maker
+    tagline: Passionate Software Engineer
     avatar: profile.jpg 
 
     # Sidebar links
@@ -46,7 +46,7 @@ experiences:
         Covia
         {: .contract-company }
 
-          Architected and implimented system for truck loading automation.
+          Architected and implemented system for truck loading automation.
           Assisted in migrating to a new ERP.
           Standardized the team's workflows around best practices such as CI/CD, pull requests, and unit testing.
           {: .position-details}
@@ -90,7 +90,7 @@ experiences:
     - role: Full Stack Developer
       subtitle: Wentworth Solutions - March 2015 - September 2016
       details: |
-        Worked on an array of projects, including bussiness apps, point of sale / ecommerce web applications, 
+        Worked on an array of projects, including business apps, point of sale / ecommerce web applications, 
         and cross-platform mobile apps.
           - Angular
           - Typescript
