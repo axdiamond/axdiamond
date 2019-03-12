@@ -1,7 +1,3 @@
-#
-# Be aware that even a small syntax error here can lead to failures in output.
-#
-
 sidebar:
     about: false # set to False or comment line if you want to remove the "how to use?" in the sidebar
     education: True # set to False if you want education in main section instead of in sidebar
@@ -13,12 +9,9 @@ sidebar:
 
     # Sidebar links
     email: me@andrew.diamonds
-    phone: 330 205 8640
     website: andrew.diamonds
     linkedin: andrew-diamond-334b17ba
     github: axdiamond
-    gitlab:
-    bitbucket:
     twitter: '@AndyNotDiamond'
     stack-overflow: 2921949/andrew-diamond
     codewars: axdiamond
@@ -26,56 +19,60 @@ sidebar:
 
     interests:
       - item: Cooking
-        link:
+        icon: fa-utensils
 
       - item: Gaming
-        link: https://www.overbuff.com/players/pc/MoistBologna-11732
+        icon: fa-headset
 
       - item: Reading
-        link:
+        icon: fa-book-open
 
 career-profile:
-    title: My Name Is Andrew Diamond
+    title: Hi, my name is Andrew Diamond
     summary: |
-      I've loved computers from an early age. From modding my Civ4 games, to developing complex systems that are used across the world. I'm familiar with microcontrollers, network administration, web applications, distributed systems, and scalability. My understanding of all of this, from the wires to the web server, shine through in my development.
+      I have been playing with computers for most of my life, from modding Civ4, to now developing complex systems that are used across the world. I am familiar with microcontrollers, network administration, web applications, distributed systems, and scalability. And this familiarity, from the wires to the web server, shines through in my development. 
 
-      Teamwork is important to me. I highly value the opinions of everyone, and make it a point to take the time to assist anyone with a question, even if its something I dont know. I like to think I improve the overall productivity of my team.
-
-      Outside of work; I enjoy the outdoors, cooking and baking, and competitive team-based video games. I listen to books and podcasts on software engineering, communication, start-ups, and economics. And I am usually training in some kind of martial arts. 
-
+      Outside of work, I enjoy the outdoors, cooking, team-based video games, and I am usually training in some form of martial art. To keep my mind active, I listen to books and podcasts on software engineering, communication, start-ups, and economics.
 
 education:
     - degree: Software Engineering and Web Development
       university: Medina County Career Center
-      time: 2014 - 2015
-      details: |
-        Describe your study here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur
-        ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-        pretium quis, sem.
-
-          - Bullet point
-          - Bullet point
+      time: 2013 - 2015
 
 experiences:
     - role: Senior Technical Consultant
       time: March 2017 - Present
-      company: Covia
+      company: Robert Half Technologies
       details: |
-        Placed me at clients for short-medium term projects.
+        Placed at clients for short to medium-term projects.
+        Presented at company sponsored meetups
 
-        ##### Covia - November 2017 - Present
-        Architected and implimented a truck loading application for sand distribution automation
-        Assisted in migrating from one ERP system to another.
-        Standardized the team's workflows around best practices such as CI/CD, pull requests, and unit testing
+        ##### Covia
+        ###### November 2017 - Present
+
+          Architected and implimented system for truck loading automation.
+          Assisted in migrating to a new ERP.
+          Standardized the team's workflows around best practices such as CI/CD, pull requests, and unit testing.
+
           - Azure Devops
           - Swagger
-          - Asp Dotnet Core
+          - asp dotnet core
           - Sql Server
-        
-        ##### The Cleveland Clinic - March 2017 - November 2017
-        
+
+        ##### Services for Independent Living
+        ###### September 2018 - January 2019
+
+          Developed a web app to manage donor contact information. Pro-bono.
+
+          - React
+          - asp dotnet core
+          - sql lite
+
+        ##### The Cleveland Clinic
+        ###### March 2017 - November 2017
+
+          Refaced public facing patient scheduling tool. Maintained and improved Sitecore based CMS
+
           - Sitecore
           - Sass
           - C#
@@ -86,47 +83,18 @@ experiences:
       details: |
         Maintained a legacy system designed to support rail road logistics and damage tracking.
           - jQuery
-          - .Net Framework MVC
+          - MVC .Net
           - Sql Server
 
     - role: Full Stack Developer
       time: March 2015 - September 2016
       company: Wentworth Solutions
       details: |
-        Worked on an array of projects, including bussiness apps, and public facing ecommerce web applications.
-        Notable applications include a point of sale application, and a cross-platform mobile app for inspections.
+        Worked on an array of projects, including bussiness apps and public facing ecommerce web applications.
+        Applications include point of sale / ecommerce websites and cross-platform mobile apps.
           - Angular
-          - .Net Framework MVC
+          - MVC .Net
           - Sql Server
-
-
-projects:
-    title: Projects
-    intro: >
-      You can list your side projects or open source libraries in this
-      section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Vestibulum et ligula in nunc bibendum fringilla a eu lectus.
-
-    assignments:
-      - title: Velocity
-        link: "#hook"
-        tagline: "A responsive website template designed to help startups promote, market and sell their products."
-
-      - title: DevStudio
-        link: "#"
-        tagline: "A responsive website template designed to help web developers/designers market their services."
-
-      - title: Tempo
-        link: "#"
-        tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
-
-      - title: Atom
-        link: "#"
-        tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
-
-      - title: Delta
-        link: "#"
-        tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
 
 skills:
     title: Skills &amp; Proficiency
@@ -136,20 +104,20 @@ skills:
         level: 87%
 
       - name: SQL Server
-        level: 80%
+        level: 83%
 
       - name: Typescript
         level: 75%
 
-      - name: React
-        level: 45%
-
       - name: Angular
         level: 65%
 
+      - name: React
+        level: 45%
+
       - name: Devops
-        level: 70%
+        level: 63%
 
       - name: Communication
-        level: 80%
+        level: 81%
 

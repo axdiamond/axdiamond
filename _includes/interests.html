@@ -9,11 +9,12 @@
   <ul class="list-unstyled interests-list">
     {% for interest in interests %}
 
-      {% if interest.link %}
-      <li><a href="{{ interest.link }}">{{ interest.item }}</a></li>
-      {% else %}
-      <li>{{ interest.item }}</li>
-      {% endif %}
+      <li> 
+        <span class="fa-stack fa-xs">
+          <i class="fas {{ interest.icon }}"></i>
+        </span>
+        {{ interest.item }}
+      </li>
 
     {% endfor %}
   </ul>
