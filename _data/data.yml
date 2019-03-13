@@ -38,7 +38,7 @@ education:
 
 experiences:
     - role: Senior Technical Consultant
-      subtitle: Robert Half Technologies - April 2017 - Present
+      subtitle: Robert Half Technology - April 2017 - Present
       details: |
         Placed the following clients for short to medium-term projects.
         Presented at company sponsored meetups. 
@@ -56,7 +56,7 @@ experiences:
           - Azure Devops
           - Swagger
           - ASP.NET Core
-          - Sql Server
+          - SQL Server
           {: .position-tech}
 
         Services for Independent Living
@@ -90,7 +90,7 @@ experiences:
         Diagnosed and fixed issues in architecture  leading to poor performance
           - jQuery
           - MVC.NET
-          - Sql Server
+          - SQL Server
           {: .position-tech}
 
     - role: Full Stack Developer
@@ -101,7 +101,7 @@ experiences:
           - Angular
           - Typescript
           - MVC.NET
-          - Sql Server
+          - SQL Server
           {: .position-tech}
 
 skills:
