@@ -169,7 +169,7 @@ p {
         }
     }
     .section {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .experiences-section, .educations-section {
@@ -198,6 +198,7 @@ p {
     .subtitle {
         color: $text-grey;
         font-size: 13px;
+        margin-bottom: 0;
     }
     .company, .university {
         margin-bottom: 10px;
@@ -274,6 +275,7 @@ p {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 0px;
+    line-height: 1;
 }
 
 .contract-date {
