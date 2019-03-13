@@ -108,24 +108,23 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
-      - name: .NET & .NET Core
-        level: 87%
-
-      - name: SQL Server
-        level: 83%
-
-      - name: Typescript
-        level: 75%
+      - name: React
+        level: 45%
 
       - name: Angular
         level: 65%
 
-      - name: React
-        level: 45%
-
+      - name: Typescript
+        level: 75%
+      
       - name: Devops
         level: 63%
 
       - name: Communication
         level: 81%
 
+      - name: SQL Server
+        level: 83%
+
+      - name: .NET & .NET Core
+        level: 87%
