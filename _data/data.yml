@@ -48,7 +48,7 @@ experiences:
         November 2017 - Present
         {: .subtitle }
 
-          Architected and implemented system for truck loading automation.
+          Architected and implemented distributed system for truck loading automation.
           Assisted in migrating to a new ERP.
           Standardized the team's workflows around best practices such as CI/CD, pull requests, and unit testing.
           {: .position-details}
