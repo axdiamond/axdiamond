@@ -43,9 +43,24 @@ experiences:
         Full time employee, placed the following clients for short to medium-term projects.
         Presented at company sponsored meetups. 
       contracts: |
+        Private
+        {: .contract-company }
+        November 2017 - May 2019
+        {: .subtitle }
+          
+          Designed website to facilitate users exploring a large graph dataset. 
+          Worked directly with users and other stakeholders to define a tool to enable them to visualize and understand data.
+          {: .position-details}
+	  
+          - AWS (lambda, ec2, s3, etc)
+          - Javascript (Express, React)
+          - Python 
+          - ArangoDB
+
+
         Covia
         {: .contract-company }
-        November 2017 - Present
+        November 2017 - May 2019
         {: .subtitle }
 
           Architected and implemented distributed system for truck loading automation.
@@ -61,7 +76,7 @@ experiences:
 
         Services for Independent Living
         {: .contract-company }
-        September 2018 - Present
+        September 2018 - May 2019
         {: .subtitle }
 
           Developed a web app to manage donor contact information. Pro bono.
@@ -105,26 +120,23 @@ experiences:
           {: .position-tech}
 
 skills:
-    title: Skills &amp; Proficiency
+    title: Top Skills
 
     toolset:
       - name: React
-        level: 45%
+        level: 75%
 
-      - name: Angular
-        level: 65%
+      - name: .NET & .NET Core
+        level: 87%
 
       - name: Typescript
-        level: 75%
+        level: 80%
       
       - name: Devops
-        level: 63%
+        level: 70%
 
       - name: Communication
         level: 81%
 
-      - name: SQL Server
-        level: 83%
-
-      - name: .NET & .NET Core
-        level: 87%
+      - name: System Design
+        level: 57%
