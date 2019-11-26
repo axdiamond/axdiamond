@@ -47,16 +47,15 @@ experiences:
         {: .contract-company }
         November 2017 - May 2019
         {: .subtitle }
-          
+
           Designed website to facilitate users exploring a large graph dataset. 
           Worked directly with users and other stakeholders to define a tool to enable them to visualize and understand data.
           {: .position-details}
-	  
+
           - AWS (lambda, ec2, s3, etc)
           - Javascript (Express, React)
           - Python 
           - ArangoDB
-
 
         Covia
         {: .contract-company }
