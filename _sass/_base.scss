@@ -48,7 +48,7 @@ p {
         color: #fff;
     }
     .profile-container {
-        padding: 30px;
+        padding: 15px;
         //background: darken($theme-color, 10%);
         background: rgba(0, 0, 0, 0.2);
         text-align: center;
@@ -163,7 +163,7 @@ p {
         color: darken($theme-color, 15%);
         position: relative;
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         .fa-stack {
             margin-top: -5px;
         }
@@ -184,10 +184,10 @@ p {
     }
     .job-title, .degree {
         color: $text-color;
-        font-size: 16px;
+        font-size: 14px;
         margin-top: 0;
         margin-bottom: 0;
-        font-weight: 500;
+        font-weight: 900;
     }
     .time {
         position: absolute;
@@ -205,7 +205,7 @@ p {
         color: $text-grey;
     }
     .contracts {
-        margin-left: 30px;
+        margin-left: 15px;
     }
     .details {
         margin-top: -10px;
@@ -273,7 +273,7 @@ p {
 .contract-company {
     color: #232b2b;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 900;
     margin-bottom: 0px;
     line-height: 1;
 }

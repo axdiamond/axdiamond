@@ -1,140 +1,121 @@
 sidebar:
-    about: false # set to False or comment line if you want to remove the "how to use?" in the sidebar
-    education: True # set to False if you want education in main section instead of in sidebar
+  about: false # set to False or comment line if you want to remove the "how to use?" in the sidebar
+  education: True # set to False if you want education in main section instead of in sidebar
 
-    # Profile information
-    name: Andrew Diamond
-    tagline: Passionate Software Engineer
-    avatar: profile.jpg 
+  # Profile information
+  name: Andrew Diamond
+  avatar: profile.jpg
 
-    # Sidebar links
-    email: me@andrew.diamonds
-    linkedin: andrew-diamond-334b17ba
-    github: axdiamond
-    twitter: '@AndyNotDiamond'
-    stack-overflow: 2921949/andrew-diamond
+  # Sidebar links
+  email: me@andrew.diamonds
+  linkedin: andrew-diamond-334b17ba
+  github: axdiamond
+  twitter: "@AndyNotDiamond"
+  stack-overflow: 2921949/andrew-diamond
 
-    interests:
-      - item: Cooking
-        icon: fa-utensils
+  interests:
+    - item: Cooking
+      icon: fa-utensils
 
-      - item: Gaming
-        icon: fa-headset
+    - item: Gaming
+      icon: fa-headset
 
-      - item: Podcasts
-        icon: fa-podcast
+    - item: Podcasts
+      icon: fa-podcast
 
 career-profile:
-    title: Hi, my name is Andrew Diamond
-    summary: |
-      In my adventures as a developer, I have worn many hats on many teams big to small, and I always aim to not only do great work, but improve the team overall in any way I can. I have always focused on understanding the root cause of issues, building communication, and creating an environment where high quality work is possible. 
+  title: Hi, my name is Andrew Diamond
+  summary: |
+    In my adventures as a developer, I have worn many hats on many teams big to small, and I always aim to not only do great work, but improve the team overall in any way I can. I have always focused on understanding the root cause of issues, building communication, and creating an environment where high quality work is possible.
 
 education:
-    - degree: Software Engineering and Web Development
-      university: Medina County Career Center
-      time: 2013 - 2015
+  - degree: Software Engineering and Web Development
+    university: Medina County Career Center
+    time: 2013 - 2015
 
 experiences:
-    - role: Senior Technical Consultant
-      subtitle: Robert Half Technology - April 2017 - Present
-      details: |
-        Full time employee, placed the following clients for short to medium-term projects.
-        Presented at company sponsored meetups. 
-      contracts: |
-        Private
-        {: .contract-company }
-        June 2019 - Present
-        {: .subtitle }
+  - role: Senior Technical Consultant
+    subtitle: Robert Half Technology - April 2017 - Present
+    details: |
+      Full time employee, placed the following clients for short to medium-term projects.
+      Presented at company sponsored meetups.
+    contracts: |
+      Private
+      {: .contract-company }
+      June 2019 - Present
+      {: .subtitle }
 
-          Designed website to facilitate users exploring a large graph dataset. 
-          Worked directly with users and other stakeholders to define a tool to enable them to visualize and understand data.
-          {: .position-details}
+        Designed website to facilitate users exploring a large graph dataset.
+        Worked directly with users and other stakeholders.
+        Managed issues, devops, and development workflow for a small team via Gitlab
+        {: .position-details}
 
-          - AWS (lambda, ec2, s3, etc)
-          - Javascript (Express, React)
-          - Python 
-          - ArangoDB
-          - Docker
+        - AWS (lambda, ec2, s3, etc)
+        - Javascript (Express, React)
+        - Python
+        - ArangoDB
+        - Docker
 
-        Covia
-        {: .contract-company }
-        November 2017 - May 2019
-        {: .subtitle }
+      Covia
+      {: .contract-company }
+      November 2017 - May 2019
+      {: .subtitle }
 
-          Architected and implemented distributed system for truck loading automation.
-          Assisted in migrating to a new ERP.
-          Standardized the team's workflows around best practices such as CI/CD, pull requests, and unit testing.
-          {: .position-details}
+        Architected and implemented distributed system for truck loading automation.
+        Assisted in migrating to a new ERP.
+        Standardized the team's workflows around best practices such as CI/CD, pull requests, and unit testing.
+        {: .position-details}
 
-          - Azure Devops
-          - Swagger
-          - ASP.NET Core
-          - SQL Server
-          {: .position-tech}
+        - Azure Devops
+        - Swagger
+        - ASP.NET Core
+        - SQL Server
+        {: .position-tech}
 
-        Services for Independent Living
-        {: .contract-company }
-        September 2018 - May 2019
-        {: .subtitle }
+      The Cleveland Clinic
+      {: .contract-company }
+      April 2017 - November 2017
+      {: .subtitle }
 
-          Developed a web app to manage donor contact information. Pro bono.
+        Refaced public appointments system UI to match branding and be Aria friendly.
+        Wrote integration with LiveEngage API for data importing and analytics.
+        - Sitecore
+        - Less
+        - C#
+        {: .position-tech}
 
-          - React
-          - ASP.NET Core
-          - SQL Lite
-          {: .position-tech}
+  - role: Software Engineer
+    subtitle: Buckeye Mountain - September 2016 - April 2017
+    details: |
+      Rebuilt caching infrastructure. Migrated team from svn to git.
+        - jQuery
+        - MVC.NET
+        - SQL Server
+        {: .position-tech}
 
-        The Cleveland Clinic
-        {: .contract-company }
-        April 2017 - November 2017
-        {: .subtitle }
-
-          Refaced public appointments system UI to match branding and be Aria friendly.
-          Wrote integration with LiveEngage API for data importing and analytics.
-          - Sitecore
-          - Less
-          - C#
-          {: .position-tech}
-
-    - role: Software Engineer
-      subtitle: Buckeye Mountain - September 2016 - April 2017
-      details: |
-        Damage tracking and billing software used by major railroads.
-        Diagnosed and fixed issues in architecture  leading to poor performance
-          - jQuery
-          - MVC.NET
-          - SQL Server
-          {: .position-tech}
-
-    - role: Full Stack Developer
-      subtitle: Wentworth Solutions - March 2015 - September 2016
-      details: |
-        Worked on an array of projects, including business apps, point of sale / ecommerce web applications, 
-        and cross-platform mobile apps.
-          - Angular
-          - Typescript
-          - MVC.NET
-          - SQL Server
-          {: .position-tech}
+  - role: Full Stack Developer
+    subtitle: Wentworth Solutions - March 2015 - September 2016
+    details: |
+      Worked on an array of projects, including business apps, point of sale / ecommerce web applications,
+      and cross-platform mobile apps.
+        - Angular
+        - Typescript
+        - MVC.NET
+        - SQL Server
+        {: .position-tech}
 
 skills:
-    title: Top Skills
+  title: Top Skills
 
-    toolset:
-      - name: React
-        level: 75%
+  toolset:
+    - name: Javascript, React, Typescript
 
-      - name: .NET & .NET Core
-        level: 87%
+    - name: C#, .NET & .NET Core
 
-      - name: Typescript
-        level: 80%
-      
-      - name: Devops
-        level: 70%
+    - name: MSSQL
 
-      - name: Communication
-        level: 81%
+    - name: Docker
 
-      - name: System Design
-        level: 57%
+    - name: Devops
+
+    - name: Cloud Engineering
