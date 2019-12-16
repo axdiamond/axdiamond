@@ -251,6 +251,8 @@ p {
 
 
 .skillset {
+    display: inline-block;
+
     .item {
         margin-bottom: 15px;
         overflow: hidden;
@@ -299,7 +301,6 @@ p {
     }
 
 }
-
 
 .website {
     display: none;

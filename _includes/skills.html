@@ -10,12 +10,12 @@
 
     <div class="skillset">
 
-      {% for skill in skills.toolset %}
 
-      <span class="level-title">{{ skill.name }}{% if forloop.last %}{% else %},{% endif %}</span>
-
-      <!--//item-->
-      {% endfor %}
+      <span class="level-title">
+        {% for skill in skills.toolset %}
+        {{ skill.name }}{% if forloop.last %}{% else %},{% endif %}
+        {% endfor %}
+      </span>
 
     </div>
 
