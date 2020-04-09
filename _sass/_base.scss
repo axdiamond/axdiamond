@@ -210,6 +210,10 @@ p {
     .details {
         margin-top: -10px;
     }
+    .position-tech::before {
+        content: 'Technology: ';
+        font-weight: bold;
+    }
     .position-tech {
         margin-top: -10px;
     }

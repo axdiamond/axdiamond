@@ -38,23 +38,30 @@ experiences:
     subtitle: Robert Half Technology - April 2017 - Present
     details: |
       Full time employee, placed the following clients for short to medium-term projects.
-      Presented at company sponsored meetups.
+      Presented at company sponsored events.
     contracts: |
-      Private
+      Perkins Coie
       {: .contract-company }
-      June 2019 - Present
+      February 2020 - Present
       {: .subtitle }
 
-        Designed website to facilitate users exploring a large graph dataset.
-        Worked directly with users and other stakeholders.
+        Rewrote poorly proforming application, simplifying the workflow to improve manual data processing throughput
+        {: .position-details}
+
+        .NET Core, Javascript (Vue), SQL Server
+        {: .position-tech}
+
+      Private
+      {: .contract-company }
+      June 2019 - February 2020
+      {: .subtitle }
+
+        Worked directly with users to design a website to explore a large graph dataset.
         Managed issues, devops, and development workflow for a small team via Gitlab
         {: .position-details}
 
-        - AWS (lambda, ec2, s3, etc)
-        - Javascript (Express, React)
-        - Python
-        - ArangoDB
-        - Docker
+        AWS (lambda, ec2, s3, etc), Javascript (Express, React), ArangoDB, Python, Docker
+        {: .position-tech}
 
       Covia
       {: .contract-company }
@@ -62,14 +69,10 @@ experiences:
       {: .subtitle }
 
         Architected and implemented distributed system for truck loading automation.
-        Assisted in migrating to a new ERP.
-        Standardized the team's workflows around best practices such as CI/CD, pull requests, and unit testing.
+        Standardized the team's workflows around best practices to improve application quality.
         {: .position-details}
 
-        - Azure Devops
-        - Swagger
-        - ASP.NET Core
-        - SQL Server
+        Azure Devops, Swagger, ASP.NET Core, SQL Server
         {: .position-tech}
 
       The Cleveland Clinic
@@ -79,18 +82,16 @@ experiences:
 
         Refaced public appointments system UI to match branding and be Aria friendly.
         Wrote integration with LiveEngage API for data importing and analytics.
-        - Sitecore
-        - Less
-        - C#
+
+        Sitecore, Less, C#
         {: .position-tech}
 
   - role: Software Engineer
     subtitle: Buckeye Mountain - September 2016 - April 2017
     details: |
       Rebuilt caching infrastructure. Migrated team from svn to git.
-        - jQuery
-        - MVC.NET
-        - SQL Server
+
+        jQuery, MVC.NET, SQL Server
         {: .position-tech}
 
   - role: Full Stack Developer
@@ -98,10 +99,8 @@ experiences:
     details: |
       Worked on an array of projects, including business apps, point of sale / ecommerce web applications,
       and cross-platform mobile apps.
-        - Angular
-        - Typescript
-        - MVC.NET
-        - SQL Server
+
+        Angular, Typescript, MVC.NET, SQL Server
         {: .position-tech}
 
 skills:
