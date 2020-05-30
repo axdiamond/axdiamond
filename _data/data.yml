@@ -34,15 +34,18 @@ education:
     time: 2013 - 2015
 
 experiences:
+ - role: SDE2
+    subtitle: Amazon AWS, S3 - May 2020 - Present
+
   - role: Senior Technical Consultant
-    subtitle: Robert Half Technology - April 2017 - Present
+    subtitle: Robert Half Technology - April 2017 - May 2020
     details: |
       Full time employee, placed the following clients for short to medium-term projects.
       Presented at company sponsored events.
     contracts: |
       Perkins Coie
       {: .contract-company }
-      February 2020 - Present
+      February 2020 - May 2020
       {: .subtitle }
 
         Rewrote poorly proforming application, simplifying the workflow to improve manual data processing throughput
