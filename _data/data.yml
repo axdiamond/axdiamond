@@ -36,6 +36,8 @@ education:
 experiences:
  - role: SDE2
     subtitle: Amazon AWS, S3 - May 2020 - Present
+    details: |
+      Building software at scale for the best cloud storage platform in the world.
 
   - role: Senior Technical Consultant
     subtitle: Robert Half Technology - April 2017 - May 2020
