@@ -34,7 +34,7 @@ education:
     time: 2013 - 2015
 
 experiences:
- - role: SDE2
+  - role: SDE2
     subtitle: Amazon AWS, S3 - May 2020 - Present
     details: |
       Building software at scale for the best cloud storage platform in the world.
