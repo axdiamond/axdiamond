@@ -24,9 +24,9 @@ sidebar:
       icon: fa-podcast
 
 career-profile:
-  title: Hi, my name is Andrew Diamond
+  title: Hi, I'm Andrew Diamond
   summary: |
-    In my adventures as a developer, I have worn many hats on many teams big to small, and I always aim to not only do great work, but improve the team overall in any way I can. I have always focused on understanding the root cause of issues, building communication, and creating an environment where high quality work is possible.
+    In my adventures as a developer, I have worn many hats on many teams big to small, and I always aim to not only do great work, but improve the team overall in any way I can. I have always focused on understanding the root cause of issues, building communication, and creating an environment where high quality work is fun.
 
 education:
   - degree: Software Engineering and Web Development
@@ -34,7 +34,7 @@ education:
     time: 2013 - 2015
 
 experiences:
-  - role: SDE2
+  - role: SDE
     subtitle: Amazon AWS, S3 - May 2020 - Present
     details: |
       Building software at scale for the best cloud storage platform in the world.
@@ -42,7 +42,7 @@ experiences:
   - role: Senior Technical Consultant
     subtitle: Robert Half Technology - April 2017 - May 2020
     details: |
-      Full time employee, placed the following clients for short to medium-term projects.
+      On-staff consultant, placed the following clients for short to medium-term projects.
       Presented at company sponsored events.
     contracts: |
       Perkins Coie
@@ -56,16 +56,16 @@ experiences:
         .NET Core, Javascript (Vue), SQL Server
         {: .position-tech}
 
-      Private
+      Deloitte
       {: .contract-company }
       June 2019 - February 2020
       {: .subtitle }
 
-        Worked directly with users to design a website to explore a large graph dataset.
-        Managed issues, devops, and development workflow for a small team via Gitlab
+        Worked directly with users to design a toolset to explore a large graph dataset.
+        Managed devops and developer workflows for a small team utilizing Gitlab
         {: .position-details}
 
-        AWS (lambda, ec2, s3, etc), Javascript (Express, React), ArangoDB, Python, Docker
+        AWS (lambda, ec2, s3, ad nauseam), Javascript (Express, React), ArangoDB, Python, Docker
         {: .position-tech}
 
       Covia
@@ -110,16 +110,11 @@ experiences:
 
 skills:
   title: Top Skills
-
   toolset:
     - name: Javascript, React, Typescript
+    - name: DevOps, CI/CD, Docker
+    - name: AWS
+    - name: Java
+    - name: Python
+    - name: .Net
 
-    - name: C#, .NET & .NET Core
-
-    - name: MSSQL
-
-    - name: Docker
-
-    - name: Devops
-
-    - name: Cloud Engineering
