@@ -1,5 +1,4 @@
 sidebar:
-  about: false # set to False or comment line if you want to remove the "how to use?" in the sidebar
   education: True # set to False if you want education in main section instead of in sidebar
 
   # Profile information
@@ -10,34 +9,23 @@ sidebar:
   email: me@andrew.diamonds
   linkedin: andrew-diamond-334b17ba
   github: axdiamond
-  twitter: "@AndyNotDiamond"
   stack-overflow: 2921949/andrew-diamond
-
-  interests:
-    - item: Cooking
-      icon: fa-utensils
-
-    - item: Gaming
-      icon: fa-headset
-
-    - item: Podcasts
-      icon: fa-podcast
-
-career-profile:
-  title: Hi, I'm Andrew Diamond
-  summary: |
-    In my adventures as a developer, I have worn many hats on many teams big to small, and I always aim to not only do great work, but improve the team overall in any way I can. I have always focused on understanding the root cause of issues, building communication, and creating an environment where high quality work is fun.
 
 education:
   - degree: Software Engineering and Web Development
     university: Medina County Career Center
     time: 2013 - 2015
 
+summary: |
+  In my adventures as an engineer, I have worn many hats on many teams big to small, and I always aim to not only do great work, but improve the team overall in any way I can.
+  I have always focused on understanding the root cause of issues, building communication, and creating an environment where high quality work is fun.
+
+
 experiences:
-  - role: SDE
+  - role: Software Engineer
     subtitle: Amazon AWS, S3 - May 2020 - Present
     details: |
-      Building software at scale for the best cloud storage platform in the world.
+      Building software at scale for the best cloud storage platform in the world. I evolve and support S3 Copy and other Object level APIs.
 
   - role: Senior Technical Consultant
     subtitle: Robert Half Technology - April 2017 - May 2020
@@ -50,7 +38,7 @@ experiences:
       February 2020 - May 2020
       {: .subtitle }
 
-        Rewrote poorly proforming application, simplifying the workflow to improve manual data processing throughput
+        Refactored poorly proforming application, simplifying the workflow to improve manual data processing throughput
         {: .position-details}
 
         .NET Core, Javascript (Vue), SQL Server
@@ -111,10 +99,9 @@ experiences:
 skills:
   title: Top Skills
   toolset:
+    - name: DevOps - CI/CD
+    - name: Force Multiplication, Mentoring
+    - name: Java, .Net
     - name: Javascript, React, Typescript
-    - name: DevOps, CI/CD, Docker
-    - name: AWS
-    - name: Java
-    - name: Python
-    - name: .Net
+    - name: AWS 
 
