@@ -1,12 +1,21 @@
 {% assign experiences = site.data.data.experiences %}
+{% assign summary = site.data.data.summary %}
 {% if experiences %}
+
+<section class="section experiences-section">
+  <h2 class="section-title">
+    Hi, I'm Andrew Diamond
+  </h2>
+{{ summary }}
+</section>
+
 <section class="section experiences-section">
   <h2 class="section-title">
     <span class="fa-stack fa-xs">
       <i class="fas fa-circle fa-stack-2x"></i>
       <i class="fas fa-briefcase fa-stack-1x fa-inverse"></i>
     </span>
-    Experiences
+    Experience
   </h2>
 
   {% for experience in experiences %}
