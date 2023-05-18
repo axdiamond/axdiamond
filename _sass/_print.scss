@@ -24,7 +24,7 @@
    .sidebar-wrapper {
       position: static;
       float: right;
-      width: 40%;
+      width: 30vw;
       -webkit-print-color-adjust: exact;
    }
    .fa-stack,
@@ -44,5 +44,9 @@
 
    .website {
       display: inherit;
+   }
+
+   .main-wrapper {
+      padding: 0px !important;
    }
 }
