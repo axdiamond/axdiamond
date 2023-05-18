@@ -17,15 +17,15 @@ education:
     time: 2013 - 2015
 
 summary: |
-  In my adventures as an engineer, I have worn many hats on many teams big to small, and I always aim to not only do great work, but improve the team overall in any way I can.
-  I have always focused on understanding the root cause of issues, building communication, and creating an environment where high quality work is fun.
-
+  In my adventures as an engineer, I have worn many hats on many teams big to small. I always aim to not only do great work, but improve the team overall in any way I can.
+  I always focus on understanding the root cause of issues, building trust, and creating an environment where high quality work is fun.
 
 experiences:
-  - role: Software Engineer
+  - role: Senior Software Engineer
     subtitle: Amazon AWS, S3 - May 2020 - Present
     details: |
-      Building software at scale for the best cloud storage platform in the world. I evolve and support S3 Copy and other Object level APIs.
+      Mentor, tech lead, SRE, application engineer. I wear a lot of hats.
+      Building software at scale for the best cloud storage platform in the world. I evolve and support S3 CopyObject and other object level APIs.
 
   - role: Senior Technical Consultant
     subtitle: Robert Half Technology - April 2017 - May 2020
@@ -38,7 +38,9 @@ experiences:
       February 2020 - May 2020
       {: .subtitle }
 
-        Refactored poorly proforming application, simplifying the workflow to improve manual data processing throughput
+        Worked directly with in-house customers to design and deliver a line-of-business application for processing legal documents. 
+        Hyper-optimized workflows to improve throughput from 10 documents/hr to over 80/hr.
+        Delivered a proof-of-concept to augment the current workflow with Computer Vision technologies. 
         {: .position-details}
 
         .NET Core, Javascript (Vue), SQL Server
@@ -49,11 +51,11 @@ experiences:
       June 2019 - February 2020
       {: .subtitle }
 
-        Worked directly with users to design a toolset to explore a large graph dataset.
-        Managed devops and developer workflows for a small team utilizing Gitlab
+        Designed and iteratively built an interactive Web UI to visually explore large graph datasets.
+        Managed devops and developer workflows for a small team utilizing Gitlab.
         {: .position-details}
 
-        AWS (lambda, ec2, s3, ad nauseam), Javascript (Express, React), ArangoDB, Python, Docker
+        AWS (lambda, ec2, s3, etc), Javascript (Express, React), ArangoDB, Python, Docker
         {: .position-tech}
 
       Covia
@@ -62,7 +64,8 @@ experiences:
       {: .subtitle }
 
         Architected and implemented distributed system for truck loading automation.
-        Standardized the team's workflows around best practices to improve application quality.
+        Worked across organizations to build a CI/CD standard for safety critical and SOX compliant systems. 
+        Reduced effort to deploy from 2 days to no-touch, a critical goal to scale the system to the projected 45 independent sites. 
         {: .position-details}
 
         Azure Devops, Swagger, ASP.NET Core, SQL Server
@@ -73,8 +76,9 @@ experiences:
       April 2017 - November 2017
       {: .subtitle }
 
-        Refaced public appointments system UI to match branding and be Aria friendly.
+        Refaced public appointments system UI to match branding and be significantly more accessible.
         Wrote integration with LiveEngage API for data importing and analytics.
+        {: .position-details}
 
         Sitecore, Less, C#
         {: .position-tech}
@@ -82,24 +86,24 @@ experiences:
   - role: Software Engineer
     subtitle: Buckeye Mountain - September 2016 - April 2017
     details: |
-      Rebuilt caching infrastructure. Migrated team from svn to git.
+      Rebuilt caching infrastructure to reduce misses by 45%. Migrated team from svn to git.
 
-        jQuery, MVC.NET, SQL Server
-        {: .position-tech}
+      jQuery, MVC.NET, SQL Server
+      {: .position-tech}
 
   - role: Full Stack Developer
     subtitle: Wentworth Solutions - March 2015 - September 2016
     details: |
-      Worked on an array of projects, including business apps, point of sale / ecommerce web applications,
-      and cross-platform mobile apps.
+      Full Stack SPA engineer building rich and interactive Web UIs for point of sale systems and multi-platform inspection software.
 
-        Angular, Typescript, MVC.NET, SQL Server
-        {: .position-tech}
+      Angular, Typescript, MVC.NET, SQL Server
+      {: .position-tech}
 
 skills:
   title: Top Skills
   toolset:
-    - name: DevOps - CI/CD
+    - name: DevOps, CI/CD
+    - name: Monitoring and Observability
     - name: Force Multiplication, Mentoring
     - name: Java, .Net
     - name: Javascript, React, Typescript
