@@ -7,14 +7,12 @@
        font-size: 10pt;
     }
 
-
    a[href]:after {
       content: "";
    }
 
     img.avatar {
-        filter: grayscale(1);
-        -webkit-filter: greyscale(1);
+      display: none;
     }
    .main-wrapper .time {
        float: right;
@@ -23,7 +21,6 @@
    }
    .sidebar-wrapper {
       position: static;
-      float: right;
       width: 30vw;
       -webkit-print-color-adjust: exact;
    }
@@ -49,4 +46,8 @@
    .main-wrapper {
       padding: 0px !important;
    }
+
+   .section.experiences-section.summary {
+      display: none;
+   }  
 }

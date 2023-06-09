@@ -32,17 +32,15 @@ p {
     background:$theme-color;
     max-width: 1000px;
     margin: 0 auto;
-    position: relative;
+    display: flex;
     @include box-shadow(0px 2px 4px rgba(0,0,0,0.1));
 }
 
 .sidebar-wrapper {
     background: $theme-color;
-    position: absolute;
-    right: 0;
-    width: 280px;
     height: 100%;
     min-height: 800px;
+    min-width: 200px;
     color: #fff;
     a {
         color: #fff;
@@ -93,7 +91,7 @@ p {
         }
     }
     .container-block {
-        padding: 30px;
+        padding: 15px;
     }
     .container-block-title {
         text-transform: uppercase;
@@ -155,8 +153,7 @@ p {
 
 .main-wrapper {
     background: #fff;
-    padding: 60px;
-    padding-right: 340px;
+    padding: 30px;
     .section-title {
         font-size: 20px;
         font-weight: 500;
