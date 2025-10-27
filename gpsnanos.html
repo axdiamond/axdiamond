@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Nanosecond Time Converter</title>
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            color: white;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0 !important;
+        }
+
+        .btn-primary {
+            border: none;
+        }
+        
+        .btn-utility {
+            margin-bottom: 5px;
+        }
+
+        .result-display {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            word-break: break-all;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin-bottom: 15px;
+        }
+
+        .current-time-display {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .label-text {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+
+        .relative-time {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .clickable-display {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .clickable-display:hover {
+            background: #e9ecef !important;
+            transform: scale(1.02);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .clickable-display::after {
+            content: '📋 Click to copy';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: #6c757d;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .clickable-display:hover::after {
+            opacity: 1;
+        }
+
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            animation: slideIn 0.3s ease, slideOut 0.3s ease 2.7s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+
+        .current-time-display {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .current-time-display:hover {
+            transform: scale(1.05);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">
+            GPS Nanosecond Time Converter
+        </h1>
+
+        <!-- Current GPS Time Display -->
+        <div class="card">
+            <div class="card-header">
+                Current GPS Time
+            </div>
+            <div class="card-body text-center">
+                <div class="current-time-display" id="currentGpsNs" onclick="copyToClipboard(this.textContent, 'GPS Nanoseconds')" title="Click to copy">Loading...</div>
+                <p class="text-muted mb-0">Nanoseconds since GPS epoch (click to copy)</p>
+                <hr>
+                <div id="currentUtcTime" class="mt-2"></div>
+                <div id="currentGpsTime" class="mt-2"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- DateTime to GPS NS Converter -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        DateTime → GPS Nanoseconds
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="label-text">Select Date & Time (UTC):</label>
+                            <input type="datetime-local" class="form-control" id="datetimeInput" step="0.001">
+                        </div>
+                        <div class="btn-group-sm mb-3 btn-utility" role="group">
+                            <button class="btn btn-outline-secondary btn-sm mr-1 mb-1" onclick="adjustDateTime(-24, 'hours')" title="Subtract 24 hours">
+                                -24 hr
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm mr-1 mb-1" onclick="adjustDateTime(24, 'hours')" title="Add 24 hours">
+                                +24 hr
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm mr-1 mb-1" onclick="adjustDateTime(-1, 'hours')" title="Subtract 1 hour">
+                                -1 hr
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm mr-1 mb-1" onclick="adjustDateTime(1, 'hours')" title="Add 1 hour">
+                                +1 hr
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm mr-1 mb-1" onclick="adjustDateTime(-5, 'minutes')" title="Subtract 1 hour">
+                                -5 min
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm mr-1 mb-1" onclick="adjustDateTime(5, 'minutes')" title="Add 1 hour">
+                                +5 min
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm mr-1 mb-1" onclick="setToZeroMinutes()" title="Set minutes and seconds to :00">
+                                :00
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm mb-1" onclick="setToZeroMilliseconds()" title="Set milliseconds to .000">
+                                .000
+                            </button>
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="convertDateTimeToGps()">
+                            Convert to GPS NS
+                        </button>
+                        <hr>
+                        <div id="dt2gpsResult"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GPS NS to DateTime Converter -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        GPS Nanoseconds → DateTime
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="label-text">Enter GPS Nanoseconds:</label>
+                            <input type="text" class="form-control" id="gpsNsInput"
+                                placeholder="e.g., 1435708818000000000">
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="convertGpsToDateTime()">
+                            Convert to DateTime
+                        </button>
+                        <hr>
+                        <div id="gps2dtResult"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/plugins/jquery-1.11.3.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        // GPS epoch: January 6, 1980 00:00:00 UTC
+        const GPS_EPOCH = new Date('1980-01-06T00:00:00.000Z');
+        const GPS_EPOCH_MS = GPS_EPOCH.getTime();
+
+        // Leap seconds table (UTC - GPS)
+        // GPS time does not have leap seconds, UTC does
+        // As of 2025, there are 18 leap seconds
+        const LEAP_SECONDS = [
+            { date: new Date('1981-07-01T00:00:00.000Z'), leaps: 1 },
+            { date: new Date('1982-07-01T00:00:00.000Z'), leaps: 2 },
+            { date: new Date('1983-07-01T00:00:00.000Z'), leaps: 3 },
+            { date: new Date('1985-07-01T00:00:00.000Z'), leaps: 4 },
+            { date: new Date('1988-01-01T00:00:00.000Z'), leaps: 5 },
+            { date: new Date('1990-01-01T00:00:00.000Z'), leaps: 6 },
+            { date: new Date('1991-01-01T00:00:00.000Z'), leaps: 7 },
+            { date: new Date('1992-07-01T00:00:00.000Z'), leaps: 8 },
+            { date: new Date('1993-07-01T00:00:00.000Z'), leaps: 9 },
+            { date: new Date('1994-07-01T00:00:00.000Z'), leaps: 10 },
+            { date: new Date('1996-01-01T00:00:00.000Z'), leaps: 11 },
+            { date: new Date('1997-07-01T00:00:00.000Z'), leaps: 12 },
+            { date: new Date('1999-01-01T00:00:00.000Z'), leaps: 13 },
+            { date: new Date('2006-01-01T00:00:00.000Z'), leaps: 14 },
+            { date: new Date('2009-01-01T00:00:00.000Z'), leaps: 15 },
+            { date: new Date('2012-07-01T00:00:00.000Z'), leaps: 16 },
+            { date: new Date('2015-07-01T00:00:00.000Z'), leaps: 17 },
+            { date: new Date('2017-01-01T00:00:00.000Z'), leaps: 18 }
+        ];
+
+        // Copy to clipboard function
+        function copyToClipboard(text, label) {
+            navigator.clipboard.writeText(text).then(() => {
+                showCopyNotification(label || 'Value');
+            }).catch(err => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopyNotification(label || 'Value');
+                } catch (err) {
+                    alert('Failed to copy to clipboard');
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+
+        // Show copy notification
+        function showCopyNotification(label) {
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.innerHTML = `<i class="fas fa-check-circle"></i> ${label} copied to clipboard!`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+
+        // Get leap seconds for a given UTC date
+        function getLeapSeconds(utcDate) {
+            let leaps = 0;
+            for (let i = LEAP_SECONDS.length - 1; i >= 0; i--) {
+                if (utcDate >= LEAP_SECONDS[i].date) {
+                    leaps = LEAP_SECONDS[i].leaps;
+                    break;
+                }
+            }
+            return leaps;
+        }
+
+        // Convert UTC datetime to GPS nanoseconds
+        function utcToGpsNs(utcDate) {
+            const utcMs = utcDate.getTime();
+            const leapSeconds = getLeapSeconds(utcDate);
+            const gpsDiffMs = utcMs - GPS_EPOCH_MS;
+            const gpsDiffSec = gpsDiffMs / 1000 + leapSeconds;
+            return BigInt(Math.floor(gpsDiffSec * 1e9));
+        }
+
+        // Convert GPS nanoseconds to UTC datetime
+        function gpsNsToUtc(gpsNs) {
+            const gpsNsNum = BigInt(gpsNs);
+            const gpsSeconds = Number(gpsNsNum / BigInt(1e9));
+            const gpsNanos = Number(gpsNsNum % BigInt(1e9));
+
+            // Start with GPS time (no leap seconds)
+            let utcMs = GPS_EPOCH_MS + (gpsSeconds * 1000);
+            let testDate = new Date(utcMs);
+
+            // Subtract leap seconds to get UTC
+            const leapSeconds = getLeapSeconds(testDate);
+            utcMs = GPS_EPOCH_MS + (gpsSeconds * 1000) - (leapSeconds * 1000);
+
+            const utcDate = new Date(utcMs);
+            const ms = Math.floor(gpsNanos / 1e6);
+
+            return new Date(utcDate.getTime() + ms);
+        }
+
+        // Format relative time
+        function formatRelativeTime(ns) {
+            const totalSeconds = Number(BigInt(ns) / BigInt(1e9));
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            let parts = [];
+            if (days > 0) parts.push(`${days} day${days !== 1 ? 's' : ''}`);
+            if (hours > 0) parts.push(`${hours} hour${hours !== 1 ? 's' : ''}`);
+            if (minutes > 0) parts.push(`${minutes} minute${minutes !== 1 ? 's' : ''}`);
+            if (seconds > 0 || parts.length === 0) parts.push(`${seconds} second${seconds !== 1 ? 's' : ''}`);
+
+            return parts.join(', ');
+        }
+
+        // Adjust datetime input by specified amount
+        function adjustDateTime(amount, unit) {
+            const input = document.getElementById('datetimeInput');
+            if (!input.value) {
+                alert('Please select a date and time first');
+                return;
+            }
+            
+            const currentDate = new Date(input.value + 'Z');
+            
+            if (unit === 'hours') {
+                currentDate.setHours(currentDate.getHours() + amount);
+            } else if (unit === 'minutes') {
+                currentDate.setMinutes(currentDate.getMinutes() + amount);
+            } 
+            
+            input.value = currentDate.toISOString().slice(0, 23);
+        }
+
+        // Set minutes and seconds to zero
+        function setToZeroMinutes() {
+            const input = document.getElementById('datetimeInput');
+            if (!input.value) {
+                alert('Please select a date and time first');
+                return;
+            }
+            
+            const currentDate = new Date(input.value + 'Z');
+            currentDate.setMinutes(0, 0, 0);
+            input.value = currentDate.toISOString().slice(0, 23);
+        }
+
+        // Set milliseconds to zero
+        function setToZeroMilliseconds() {
+            const input = document.getElementById('datetimeInput');
+            if (!input.value) {
+                alert('Please select a date and time first');
+                return;
+            }
+            
+            const currentDate = new Date(input.value + 'Z');
+            currentDate.setMilliseconds(0);
+            input.value = currentDate.toISOString().slice(0, 23);
+        }
+
+        // Update current GPS time
+        function updateCurrentGpsTime() {
+            const now = new Date();
+            const gpsNs = utcToGpsNs(now);
+            document.getElementById('currentGpsNs').textContent = gpsNs;
+
+            const leapSeconds = getLeapSeconds(now);
+            const gpsTime = new Date(now.getTime() + (leapSeconds * 1000));
+
+            document.getElementById('currentUtcTime').innerHTML =
+                `<strong>UTC:</strong> ${now.toISOString()}`;
+            document.getElementById('currentGpsTime').innerHTML =
+                `<strong>GPS Time:</strong> ${gpsTime.toISOString()} <small class="text-muted">(+${leapSeconds}s)</small>`;
+        }
+
+        // Convert datetime to GPS NS
+        function convertDateTimeToGps() {
+            const input = document.getElementById('datetimeInput').value;
+            if (!input) {
+                alert('Please select a date and time');
+                return;
+            }
+
+            const utcDate = new Date(input + 'Z'); // Ensure UTC
+            const gpsNs = utcToGpsNs(utcDate);
+            const leapSeconds = getLeapSeconds(utcDate);
+
+            const relative = formatRelativeTime(gpsNs);
+
+            document.getElementById('dt2gpsResult').innerHTML = `
+                <div class="label-text">GPS Nanoseconds:</div>
+                <div class="result-display clickable-display" onclick="copyToClipboard('${gpsNs}', 'GPS Nanoseconds')" title="Click to copy">${gpsNs}</div>
+            `;
+        }
+
+        // Convert GPS NS to datetime
+        function convertGpsToDateTime() {
+            const input = document.getElementById('gpsNsInput').value.replace(/,/g, '');
+            if (!input) {
+                alert('Please enter GPS nanoseconds');
+                return;
+            }
+
+            try {
+                const gpsNs = BigInt(input);
+                const utcDate = gpsNsToUtc(gpsNs);
+                const leapSeconds = getLeapSeconds(utcDate);
+
+                const relative = formatRelativeTime(gpsNs);
+                const now = new Date();
+                const diff = now - utcDate;
+                const isPast = diff > 0;
+                const diffAbs = Math.abs(diff);
+                const diffSeconds = Math.floor(diffAbs / 1000);
+
+                let timeAgo = '';
+                if (diffSeconds < 60) {
+                    timeAgo = `${diffSeconds} second${diffSeconds !== 1 ? 's' : ''} ${isPast ? 'ago' : 'from now'}`;
+                } else if (diffSeconds < 3600) {
+                    const mins = Math.floor(diffSeconds / 60);
+                    timeAgo = `${mins} minute${mins !== 1 ? 's' : ''} ${isPast ? 'ago' : 'from now'}`;
+                } else if (diffSeconds < 86400) {
+                    const hrs = Math.floor(diffSeconds / 3600);
+                    timeAgo = `${hrs} hour${hrs !== 1 ? 's' : ''} ${isPast ? 'ago' : 'from now'}`;
+                } else {
+                    const days = Math.floor(diffSeconds / 86400);
+                    timeAgo = `${days} day${days !== 1 ? 's' : ''} ${isPast ? 'ago' : 'from now'}`;
+                }
+
+                const utcIso = utcDate.toISOString();
+                const localStr = utcDate.toString();
+                
+                document.getElementById('gps2dtResult').innerHTML = `
+                    <div class="label-text">UTC DateTime:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${utcIso}', 'UTC DateTime')" title="Click to copy">${utcIso}</div>
+                    <div class="label-text mt-3">Local DateTime:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${localStr.replace(/'/g, "\\'")}', 'Local DateTime')" title="Click to copy">${localStr}</div>
+                    <div class="label-text mt-3">Relative to Now:</div>
+                    <div class="result-display clickable-display relative-time" onclick="copyToClipboard('${timeAgo}', 'Relative Time')" title="Click to copy">${timeAgo}</div>
+                `;
+            } catch (e) {
+                alert('Invalid GPS nanosecond value: ' + e.message);
+            }
+        }
+
+        // Initialize
+        updateCurrentGpsTime();
+        setInterval(updateCurrentGpsTime, 100); // Update 10 times per second
+
+        // Set current time as default
+        const now = new Date()
+        now.setMilliseconds(0);
+        document.getElementById('datetimeInput').value = now.toISOString().slice(0, 23);
+
+        // Update leap seconds info
+        document.getElementById('leapSecondsInfo').textContent = getLeapSeconds(new Date());
+    </script>
+</body>
+
+</html>
