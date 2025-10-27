@@ -208,6 +208,17 @@
                         <button class="btn btn-primary btn-block" onclick="convertDateTimeToGps()">
                             Convert to GPS NS
                         </button>
+                        
+                        <div class="mt-4">
+                            <div class="form-group">
+                                <label class="label-text">Or Enter Unix Milliseconds:</label>
+                                <input type="text" class="form-control" id="unixMsInput"
+                                    placeholder="e.g., 1730058000000">
+                            </div>
+                            <button class="btn btn-primary btn-block" onclick="convertUnixMsToGps()">
+                                Convert Unix MS to GPS NS
+                            </button>
+                        </div>
                         <hr>
                         <div id="dt2gpsResult"></div>
                     </div>
@@ -449,6 +460,49 @@
                 <div class="label-text mt-3">Unix Milliseconds:</div>
                 <div class="result-display clickable-display" onclick="copyToClipboard('${unixMs}', 'Unix Milliseconds')" title="Click to copy">${unixMs}</div>
             `;
+        }
+
+        // Convert Unix milliseconds to GPS NS
+        function convertUnixMsToGps() {
+            const input = document.getElementById('unixMsInput').value.replace(/,/g, '');
+            if (!input) {
+                alert('Please enter Unix milliseconds');
+                return;
+            }
+
+            try {
+                const unixMs = parseInt(input);
+                if (isNaN(unixMs)) {
+                    alert('Invalid Unix milliseconds value');
+                    return;
+                }
+
+                const utcDate = new Date(unixMs);
+                const gpsNs = utcToGpsNs(utcDate);
+                const leapSeconds = getLeapSeconds(utcDate);
+                
+                // Calculate GPS milliseconds (GPS NS / 1,000,000)
+                const gpsMs = Number(gpsNs / BigInt(1e6));
+
+                const relative = formatRelativeTime(gpsNs);
+                const utcIso = utcDate.toISOString();
+                const localStr = utcDate.toString();
+
+                document.getElementById('dt2gpsResult').innerHTML = `
+                    <div class="label-text">GPS Nanoseconds:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${gpsNs}', 'GPS Nanoseconds')" title="Click to copy">${gpsNs}</div>
+                    <div class="label-text mt-3">GPS Milliseconds:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${gpsMs}', 'GPS Milliseconds')" title="Click to copy">${gpsMs}</div>
+                    <div class="label-text mt-3">Unix Milliseconds:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${unixMs}', 'Unix Milliseconds')" title="Click to copy">${unixMs}</div>
+                    <div class="label-text mt-3">UTC DateTime:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${utcIso}', 'UTC DateTime')" title="Click to copy">${utcIso}</div>
+                    <div class="label-text mt-3">Local DateTime:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${localStr.replace(/'/g, "\\'")}', 'Local DateTime')" title="Click to copy">${localStr}</div>
+                `;
+            } catch (e) {
+                alert('Invalid Unix milliseconds value: ' + e.message);
+            }
         }
 
         // Convert GPS NS to datetime
