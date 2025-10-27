@@ -222,7 +222,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label class="label-text">Enter GPS Nanoseconds:</label>
+                            <label class="label-text">Enter GPS Nanoseconds/GPS Milliseconds:</label>
                             <input type="text" class="form-control" id="gpsNsInput"
                                 placeholder="e.g., 1435708818000000000">
                         </div>
@@ -452,14 +452,26 @@
 
         // Convert GPS NS to datetime
         function convertGpsToDateTime() {
-            const input = document.getElementById('gpsNsInput').value.replace(/,/g, '');
+            let input = document.getElementById('gpsNsInput').value.replace(/,/g, '');
             if (!input) {
                 alert('Please enter GPS nanoseconds');
                 return;
             }
 
             try {
-                const gpsNs = BigInt(input);
+                let gpsNs = BigInt(input);
+                
+                // Auto-detect GPS milliseconds and convert to nanoseconds
+                // GPS milliseconds are typically 13 digits, GPS nanoseconds are 19 digits
+                const inputLength = input.length;
+                let wasConverted = false;
+                
+                if (inputLength <= 13) {
+                    // Likely GPS milliseconds, convert to nanoseconds
+                    gpsNs = gpsNs * BigInt(1e6);
+                    wasConverted = true;
+                }
+                
                 const utcDate = gpsNsToUtc(gpsNs);
                 const leapSeconds = getLeapSeconds(utcDate);
                 
@@ -494,7 +506,9 @@
                 const localStr = utcDate.toString();
                 
                 document.getElementById('gps2dtResult').innerHTML = `
-                    <div class="label-text">UTC DateTime:</div>
+                    <div class="label-text">GPS Nanoseconds:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${gpsNs}', 'GPS Nanoseconds')" title="Click to copy">${gpsNs}</div>
+                    <div class="label-text mt-3">UTC DateTime:</div>
                     <div class="result-display clickable-display" onclick="copyToClipboard('${utcIso}', 'UTC DateTime')" title="Click to copy">${utcIso}</div>
                     <div class="label-text mt-3">Local DateTime:</div>
                     <div class="result-display clickable-display" onclick="copyToClipboard('${localStr.replace(/'/g, "\\'")}', 'Local DateTime')" title="Click to copy">${localStr}</div>
