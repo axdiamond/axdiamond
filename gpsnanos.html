@@ -431,12 +431,22 @@
             const utcDate = new Date(input + 'Z'); // Ensure UTC
             const gpsNs = utcToGpsNs(utcDate);
             const leapSeconds = getLeapSeconds(utcDate);
+            
+            // Calculate GPS milliseconds (GPS NS / 1,000,000)
+            const gpsMs = Number(gpsNs / BigInt(1e6));
+            
+            // Calculate Unix milliseconds (milliseconds since Unix epoch)
+            const unixMs = utcDate.getTime();
 
             const relative = formatRelativeTime(gpsNs);
 
             document.getElementById('dt2gpsResult').innerHTML = `
                 <div class="label-text">GPS Nanoseconds:</div>
                 <div class="result-display clickable-display" onclick="copyToClipboard('${gpsNs}', 'GPS Nanoseconds')" title="Click to copy">${gpsNs}</div>
+                <div class="label-text mt-3">GPS Milliseconds:</div>
+                <div class="result-display clickable-display" onclick="copyToClipboard('${gpsMs}', 'GPS Milliseconds')" title="Click to copy">${gpsMs}</div>
+                <div class="label-text mt-3">Unix Milliseconds:</div>
+                <div class="result-display clickable-display" onclick="copyToClipboard('${unixMs}', 'Unix Milliseconds')" title="Click to copy">${unixMs}</div>
             `;
         }
 
@@ -452,6 +462,12 @@
                 const gpsNs = BigInt(input);
                 const utcDate = gpsNsToUtc(gpsNs);
                 const leapSeconds = getLeapSeconds(utcDate);
+                
+                // Calculate GPS milliseconds (GPS NS / 1,000,000)
+                const gpsMs = Number(gpsNs / BigInt(1e6));
+                
+                // Calculate Unix milliseconds (milliseconds since Unix epoch)
+                const unixMs = utcDate.getTime();
 
                 const relative = formatRelativeTime(gpsNs);
                 const now = new Date();
@@ -482,6 +498,10 @@
                     <div class="result-display clickable-display" onclick="copyToClipboard('${utcIso}', 'UTC DateTime')" title="Click to copy">${utcIso}</div>
                     <div class="label-text mt-3">Local DateTime:</div>
                     <div class="result-display clickable-display" onclick="copyToClipboard('${localStr.replace(/'/g, "\\'")}', 'Local DateTime')" title="Click to copy">${localStr}</div>
+                    <div class="label-text mt-3">GPS Milliseconds:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${gpsMs}', 'GPS Milliseconds')" title="Click to copy">${gpsMs}</div>
+                    <div class="label-text mt-3">Unix Milliseconds:</div>
+                    <div class="result-display clickable-display" onclick="copyToClipboard('${unixMs}', 'Unix Milliseconds')" title="Click to copy">${unixMs}</div>
                     <div class="label-text mt-3">Relative to Now:</div>
                     <div class="result-display clickable-display relative-time" onclick="copyToClipboard('${timeAgo}', 'Relative Time')" title="Click to copy">${timeAgo}</div>
                 `;
