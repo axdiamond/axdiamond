@@ -22,7 +22,12 @@ summary: |
 
 experiences:
   - role: Senior Software Engineer
-    subtitle: Amazon AWS, S3 - May 2020 - Present
+    subtitle: Amazon Kuiper - March 2024 - Present
+    details: |
+      Software Engineer 
+
+  - role: Senior Software Engineer
+    subtitle: Amazon AWS, S3 - May 2020 - March 2024
     details: |
       Mentor, tech lead, SRE, application engineer. I wear a lot of hats.
       Building software at scale for the best cloud storage platform in the world. I evolve and support S3 CopyObject and other object level APIs.
