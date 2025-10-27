@@ -239,6 +239,7 @@
 
     <script src="assets/plugins/jquery-1.11.3.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script>
         // GPS epoch: January 6, 1980 00:00:00 UTC
         const GPS_EPOCH = new Date('1980-01-06T00:00:00.000Z');
@@ -482,25 +483,9 @@
                 const unixMs = utcDate.getTime();
 
                 const relative = formatRelativeTime(gpsNs);
-                const now = new Date();
-                const diff = now - utcDate;
-                const isPast = diff > 0;
-                const diffAbs = Math.abs(diff);
-                const diffSeconds = Math.floor(diffAbs / 1000);
-
-                let timeAgo = '';
-                if (diffSeconds < 60) {
-                    timeAgo = `${diffSeconds} second${diffSeconds !== 1 ? 's' : ''} ${isPast ? 'ago' : 'from now'}`;
-                } else if (diffSeconds < 3600) {
-                    const mins = Math.floor(diffSeconds / 60);
-                    timeAgo = `${mins} minute${mins !== 1 ? 's' : ''} ${isPast ? 'ago' : 'from now'}`;
-                } else if (diffSeconds < 86400) {
-                    const hrs = Math.floor(diffSeconds / 3600);
-                    timeAgo = `${hrs} hour${hrs !== 1 ? 's' : ''} ${isPast ? 'ago' : 'from now'}`;
-                } else {
-                    const days = Math.floor(diffSeconds / 86400);
-                    timeAgo = `${days} day${days !== 1 ? 's' : ''} ${isPast ? 'ago' : 'from now'}`;
-                }
+                
+                // Use moment.js for better relative time formatting
+                const timeAgo = moment(utcDate).fromNow();
 
                 const utcIso = utcDate.toISOString();
                 const localStr = utcDate.toString();
