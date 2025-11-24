@@ -32,64 +32,117 @@
             font-family: 'Roboto', Arial, sans-serif;
             min-height: 100vh;
             padding: 20px 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
 
         .container {
             max-width: 1200px;
         }
 
+        h1 {
+            color: #ffffff;
+        }
+
         .card {
             margin-bottom: 20px;
             padding: 5px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            background-color: #2a2a2a;
+            border: 1px solid #3a3a3a;
         }
 
-        .card-header {
-            color: white;
-            font-weight: bold;
-            border-radius: 10px 10px 0 0 !important;
+        .card-body {
+            background-color: #2a2a2a;
         }
 
         .btn-primary {
+            background-color: #4a90e2;
             border: none;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #3a7bc8;
+        }
+        
+        .btn-outline-secondary {
+            background-color: #3a3a3a;
+            border: 1px solid #4a4a4a;
+            color: #e0e0e0;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #4a4a4a;
+            border-color: #5a5a5a;
+            color: #ffffff;
         }
         
         .btn-utility {
             margin-bottom: 5px;
         }
 
+        .form-group {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            background-color: #1a1a1a;
+            border: 1px solid #4a4a4a;
+            color: #e0e0e0;
+        }
+
+        .form-control:focus {
+            background-color: #252525;
+            border-color: #4a90e2;
+            color: #ffffff;
+            box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+        }
+
+        .form-control::placeholder {
+            color: #6a6a6a;
+        }
+
         .result-display {
-            background: #f8f9fa;
+            background: #1a1a1a;
             padding: 15px;
             border-radius: 5px;
             font-family: 'Courier New', monospace;
             font-size: 16px;
             word-break: break-all;
+            color: #4af;
+            border: 1px solid #3a3a3a;
         }
 
         .info-box {
-            background: #e7f3ff;
+            background: #2a3a4a;
             padding: 15px;
-            border-left: 4px solid #2196F3;
+            border-left: 4px solid #4a90e2;
             margin-bottom: 15px;
+            color: #e0e0e0;
         }
 
         .current-time-display {
             font-size: 24px;
             font-weight: bold;
-            color: #667eea;
+            color: #4af;
         }
 
         .label-text {
             font-weight: 600;
-            color: #495057;
+            color: #b0b0b0;
             margin-bottom: 5px;
         }
 
         .relative-time {
-            color: #28a745;
+            color: #5cb85c;
             font-weight: bold;
+        }
+
+        .text-muted {
+            color: #7a7a7a !important;
         }
 
         .clickable-display {
@@ -99,9 +152,10 @@
         }
 
         .clickable-display:hover {
-            background: #e9ecef !important;
+            background: #252525 !important;
             transform: scale(1.02);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(74, 144, 226, 0.3);
+            border-color: #4a90e2;
         }
 
         .clickable-display::after {
@@ -111,7 +165,7 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 12px;
-            color: #6c757d;
+            color: #8a8a8a;
             opacity: 0;
             transition: opacity 0.2s ease;
         }
@@ -124,11 +178,11 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #28a745;
+            background: #5cb85c;
             color: white;
             padding: 12px 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             z-index: 9999;
             animation: slideIn 0.3s ease, slideOut 0.3s ease 2.7s;
         }
@@ -162,7 +216,11 @@
 
         .current-time-display:hover {
             transform: scale(1.05);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 8px rgba(68, 170, 255, 0.6);
+        }
+
+        hr {
+            border-color: #3a3a3a;
         }
     </style>
 </head>
@@ -175,9 +233,6 @@
 
         <!-- Current GPS Time Display -->
         <div class="card">
-            <div class="card-header">
-                Current GPS Time
-            </div>
             <div class="card-body text-center">
                 <div class="current-time-display" id="currentGpsNs" onclick="copyToClipboard(this.textContent, 'GPS Nanoseconds')" title="Click to copy">Loading...</div>
                 <p class="text-muted mb-0">Nanoseconds since GPS epoch (click to copy)</p>
@@ -191,9 +246,6 @@
             <!-- DateTime to GPS NS Converter -->
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
-                        DateTime → GPS Nanoseconds
-                    </div>
                     <div class="card-body">
                         <div class="form-group">
                             <label class="label-text">Select Date & Time (UTC):</label>
@@ -248,9 +300,6 @@
             <!-- GPS NS to DateTime Converter -->
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
-                        GPS Nanoseconds → DateTime
-                    </div>
                     <div class="card-body">
                         <div class="form-group">
                             <label class="label-text">Enter GPS Nanoseconds/GPS Milliseconds:</label>
@@ -521,7 +570,7 @@
                     <div class="result-display clickable-display" onclick="copyToClipboard('${localStr.replace(/'/g, "\\'")}', 'Local DateTime')" title="Click to copy">${localStr}</div>
                 `;
             } catch (e) {
-                alert('Invalid Unix milliseconds value: ' + e.message);
+                alert(`That number looks a little funny, are you sure that is a Unix millis value? \n[${input}]`);
             }
         }
 
@@ -592,8 +641,49 @@
         now.setMilliseconds(0);
         document.getElementById('datetimeInput').value = now.toISOString().slice(0, 23);
 
-        // Update leap seconds info
-        document.getElementById('leapSecondsInfo').textContent = getLeapSeconds(new Date());
+        // Hide result divs when input values change
+        var datetimeInputValue = "";
+        document.getElementById('datetimeInput').addEventListener('input', (e) => {
+            const newValue = e.target.value;
+
+            if (newValue !== datetimeInputValue) {
+                console.log("Changed from:", datetimeInputValue, "to:", newValue);
+                datetimeInputValue = newValue; 
+
+                document.getElementById('dt2gpsResult').innerHTML = '';
+            }
+        });
+
+        
+
+        var unixMsInputValue = "";
+        document.getElementById('unixMsInput').addEventListener('input', function() {
+            document.getElementById('dt2gpsResult').innerHTML = '';
+        });
+
+        var gpsNsInputValue = "";
+        document.getElementById('gpsNsInput').addEventListener('input', function() {
+            document.getElementById('gps2dtResult').innerHTML = '';
+        });
+
+        // Allow Enter key to submit conversions
+        document.getElementById('datetimeInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                convertDateTimeToGps();
+            }
+        });
+
+        document.getElementById('unixMsInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                convertUnixMsToGps();
+            }
+        });
+
+        document.getElementById('gpsNsInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                convertGpsToDateTime();
+            }
+        });
     </script>
 </body>
 
