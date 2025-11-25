@@ -1,1 +1,1 @@
-docker run  --platform linux/amd64 -it --rm -v "$PWD":/usr/src/app -p "4000:4000" starefossen/github-pages
+docker run --init --platform linux/amd64 -it --rm -v "$PWD":/usr/src/app -p "4000:4000" starefossen/github-pages
