@@ -574,6 +574,16 @@
             }
         }
 
+        function updateTimestampQueryParam(value) {
+            const url = new URL(window.location.href);
+            if (value) {
+                url.searchParams.set('t', value);
+            } else {
+                url.searchParams.delete('t');
+            }
+            window.history.replaceState({}, '', url.toString());
+        }
+
         // Convert GPS NS to datetime
         function convertGpsToDateTime() {
             let input = document.getElementById('gpsNsInput').value.replace(/,/g, '');
@@ -599,6 +609,8 @@
                 const utcDate = gpsNsToUtc(gpsNs);
                 const leapSeconds = getLeapSeconds(utcDate);
                 
+                updateTimestampQueryParam(gpsNs.toString());
+
                 // Calculate GPS milliseconds (GPS NS / 1,000,000)
                 const gpsMs = Number(gpsNs / BigInt(1e6));
                 
@@ -665,6 +677,13 @@
         document.getElementById('gpsNsInput').addEventListener('input', function() {
             document.getElementById('gps2dtResult').innerHTML = '';
         });
+
+        // Populate and convert from query string (?t=)
+        const timestampParam = new URLSearchParams(window.location.search).get('t');
+        if (timestampParam) {
+            document.getElementById('gpsNsInput').value = timestampParam;
+            convertGpsToDateTime();
+        }
 
         // Allow Enter key to submit conversions
         document.getElementById('datetimeInput').addEventListener('keypress', function(e) {
