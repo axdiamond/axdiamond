@@ -17,21 +17,32 @@ education:
     time: 2013 - 2015
 
 summary: |
-  In my adventures as an engineer, I have worn many hats on many teams big to small. I always aim to not only do great work, but improve the team overall in any way I can.
-  I always focus on understanding the root cause of issues, building trust, and creating an environment where high quality work is fun.
+  Senior software engineer with 12+ years building high-quality, cross-domain software — from real-time satellite network control planes to autonomous heavy-industry automation.
+  I thrive at the intersection of software and the physical world, designing systems that are reliable, observable, and built to perform under real conditions.
+  I focus on understanding root causes, raising the engineering bar, and creating environments where high quality work is the norm.
 
 experiences:
   - role: Senior Software Engineer
-    subtitle: Amazon Kuiper - March 2024 - Present
+    subtitle: Amazon Leo (Kuiper) - March 2024 - Present
     details: |
-      Software Engineer for the Kuiper Termporal Software Defined Network. 
-      Designed and founded observability platform to provide real-time and analytical insights into T-SDN performance and the Kuiper network as a whole. 
+      King of telemetry and data for the SDN — the software that plans and executes the network topology of Amazon's low-earth-orbit satellite constellation across satellites, ground stations, and customer terminals.
+
+      Built the observability platform from the ground up, processing gigabytes of network telemetry per second, closing the feedback loop between planning and execution so the system can react to failures in real time and minimize downtime.
+
+      Built search experiences backed by OpenSearch, enabling fast lookup across satellite, ground station, and customer terminal contact data, in under 150ms round trip, sustaining that latency under thousands of concurrent clients.
+
+      Java, Rust, Go, TypeScript, C#, Kafka, Kinesis, Apache Flink, OpenSearch, DynamoDB, S3, Athena, AWS
+      {: .position-tech}
 
   - role: Senior Software Engineer
     subtitle: Amazon AWS, S3 - May 2020 - March 2024
     details: |
-      Mentor, tech lead, SRE, application engineer. I wear a lot of hats.
-      Building software at scale for the best cloud storage platform in the world. I evolve and support S3 CopyObject and other object level APIs.
+      Tech lead, SRE, and application engineer on one of the largest software fleets in the world — S3's object-level APIs including CopyObject.
+      Identified and shipped multiple latency and availability improvements. Helped launch S3 Directory Buckets, a ground-up Rust rewrite of core S3 internals.
+      Mentored engineers and drove improvements in code quality, reliability, and operational excellence.
+
+      Java, Rust, C#, TypeScript, AWS
+      {: .position-tech}
 
   - role: Senior Technical Consultant
     subtitle: Robert Half Technology - April 2017 - May 2020
@@ -44,9 +55,8 @@ experiences:
       February 2020 - May 2020
       {: .subtitle }
 
-        Worked directly with in-house customers to design and deliver a line-of-business application for processing legal documents. 
-        Hyper-optimized workflows to improve throughput from 10 documents/hr to over 80/hr.
-        Delivered a proof-of-concept to augment the current workflow with Computer Vision technologies. 
+        Hyper-optimized legal document processing workflows, improving throughput from 10 to 80+ documents/hr (8x improvement).
+        Delivered a proof-of-concept to augment the workflow with Computer Vision technologies.
         {: .position-details}
 
         .NET Core, Javascript (Vue), SQL Server
@@ -69,12 +79,13 @@ experiences:
       November 2017 - May 2019
       {: .subtitle }
 
-        Architected and implemented distributed system for truck loading automation.
-        Worked across organizations to build a CI/CD standard for safety critical and SOX compliant systems. 
-        Reduced effort to deploy from 2 days to no-touch, a critical goal to scale the system to the projected 45 independent sites. 
+        Architected and delivered the software behind the highest-throughput sand mine in Texas — and likely the world.
+        Worked hands-on with industrial engineers on-site to design an operator-facing UI built for real field conditions.
+        Built a multi-mode data synchronization system to keep the site operational regardless of local connectivity.
+        Designed CI/CD standards for safety-critical and SOX-compliant systems; reduced deployment effort from 2 days to fully automated, scaling to 45 independent sites.
         {: .position-details}
 
-        Azure Devops, Swagger, ASP.NET Core, SQL Server
+        Azure DevOps, Swagger, ASP.NET Core, SQL Server
         {: .position-tech}
 
       The Cleveland Clinic
@@ -108,10 +119,11 @@ experiences:
 skills:
   title: Top Skills
   toolset:
-    - name: DevOps, CI/CD
-    - name: Monitoring and Observability
+    - name: Distributed & Real-Time Systems
+    - name: Observability & Telemetry
+    - name: Safety-Critical CI/CD
+    - name: Rust, Go, Java, C#, TypeScript
+    - name: Kafka, Kinesis, Flink, OpenSearch
+    - name: AWS, DynamoDB, S3, Athena
     - name: Force Multiplication, Mentoring
-    - name: Java, .Net
-    - name: Javascript, React, Typescript
-    - name: AWS 
 
