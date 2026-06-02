@@ -1,5 +1,5 @@
 sidebar:
-  education: True # set to False if you want education in main section instead of in sidebar
+  education: False # set to False if you want education in main section instead of in sidebar
 
   # Profile information
   name: Andrew Diamond
@@ -11,13 +11,8 @@ sidebar:
   github: axdiamond
   stack-overflow: 2921949/andrew-diamond
 
-education:
-  - degree: Software Engineering and Web Development
-    university: Medina County Career Center
-    time: 2013 - 2015
-
 summary: |
-  Senior software engineer with 12+ years building high-quality, cross-domain software — from real-time satellite network control planes to autonomous heavy-industry automation.
+  Senior software engineer with 12+ years building high-quality, cross-domain software from real-time satellite network control planes to autonomous heavy-industry automation.
   I thrive at the intersection of software and the physical world, designing systems that are reliable, observable, and built to perform under real conditions.
   I focus on understanding root causes, raising the engineering bar, and creating environments where high quality work is the norm.
 
@@ -25,19 +20,23 @@ experiences:
   - role: Senior Software Engineer
     subtitle: Amazon Leo (Kuiper) - March 2024 - Present
     details: |
-      King of telemetry and data for the SDN — the software that plans and executes the network topology of Amazon's low-earth-orbit satellite constellation across satellites, ground stations, and customer terminals.
+      Data systems technical lead for the T-SDN organization; the go-to for architecture decisions, performance standards, and data intensive system design across the team.
+
+      Built the SDN's control plane interface from prototype to production, working closely with the SDN Agent team to develop the SDN's embedded presence in our devices, delivering network intent and distributing it across the constellation.
 
       Built the observability platform from the ground up, processing gigabytes of network telemetry per second, closing the feedback loop between planning and execution so the system can react to failures in real time and minimize downtime.
 
-      Built search experiences backed by OpenSearch, enabling fast lookup across satellite, ground station, and customer terminal contact data, in under 150ms round trip, sustaining that latency under thousands of concurrent clients.
+      Dove deep into device internals to identify and prioritize the most impactful telemetry to surface, directly tied to real operational problems.
 
-      Java, Rust, Go, TypeScript, C#, Kafka, Kinesis, Apache Flink, OpenSearch, DynamoDB, S3, Athena, AWS
+      Built search experiences backed by OpenSearch, enabling fast lookup across satellite, ground station, and customer terminal contact data in under 150ms round trip, sustaining that latency under thousands of concurrent clients.
+
+      Java, Rust, Go, TypeScript, C#, Python, Kafka, Kinesis, Apache Flink, OpenSearch, DynamoDB, S3, Athena, AWS
       {: .position-tech}
 
   - role: Senior Software Engineer
     subtitle: Amazon AWS, S3 - May 2020 - March 2024
     details: |
-      Tech lead, SRE, and application engineer on one of the largest software fleets in the world — S3's object-level APIs including CopyObject.
+      Team lead, SRE, and application engineer on one of the largest software fleets in the world; S3's object-level APIs including CopyObject.
       Identified and shipped multiple latency and availability improvements. Helped launch S3 Directory Buckets, a ground-up Rust rewrite of core S3 internals.
       Mentored engineers and drove improvements in code quality, reliability, and operational excellence.
 
@@ -79,10 +78,10 @@ experiences:
       November 2017 - May 2019
       {: .subtitle }
 
-        Architected and delivered the software behind the highest-throughput sand mine in Texas — and likely the world.
+        Designed and delivered the software behind the highest-throughput sand mine in Texas.
         Worked hands-on with industrial engineers on-site to design an operator-facing UI built for real field conditions.
         Built a multi-mode data synchronization system to keep the site operational regardless of local connectivity.
-        Designed CI/CD standards for safety-critical and SOX-compliant systems; reduced deployment effort from 2 days to fully automated, scaling to 45 independent sites.
+        Designed CI/CD standards for SOX-compliant systems; reduced deployment effort from 2 days to fully automated, scaling to 45 independent sites. Interfaced with safety-critical systems to ensure correct product delivery.
         {: .position-details}
 
         Azure DevOps, Swagger, ASP.NET Core, SQL Server
@@ -93,8 +92,7 @@ experiences:
       April 2017 - November 2017
       {: .subtitle }
 
-        Refaced public appointments system UI to match branding and be significantly more accessible.
-        Wrote integration with LiveEngage API for data importing and analytics.
+        Refaced public appointments system UI to match branding and be significantly more accessible. Wrote integrations for site analytics.
         {: .position-details}
 
         Sitecore, Less, C#
@@ -125,5 +123,5 @@ skills:
     - name: Rust, Go, Java, C#, TypeScript
     - name: Kafka, Kinesis, Flink, OpenSearch
     - name: AWS, DynamoDB, S3, Athena
-    - name: Force Multiplication, Mentoring
+    - name: Mentoring
 
