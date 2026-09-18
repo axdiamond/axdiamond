@@ -31,13 +31,14 @@
         body {
             font-family: 'Roboto', Arial, sans-serif;
             min-height: 100vh;
-            padding: 20px 0;
+            padding: 0 0 20px;
             background-color: #1a1a1a;
             color: #e0e0e0;
         }
 
         .container {
             max-width: 1200px;
+            padding-top: 20px;
         }
 
         h1 {
@@ -222,10 +223,58 @@
         hr {
             border-color: #3a3a3a;
         }
+
+        .blue-origin-banner {
+            background-color: #002856;
+            color: #ffffff;
+            width: 100%;
+        }
+
+        .blue-origin-banner .banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .blue-origin-banner .banner-text {
+            font-size: 13px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .blue-origin-banner .banner-btn {
+            background-color: #ffffff;
+            color: #002856;
+            border: none;
+            padding: 5px 14px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .blue-origin-banner .banner-btn:hover {
+            background-color: #e6e6e6;
+            color: #002856;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
+    <div class="blue-origin-banner">
+        <div class="banner-inner">
+            <p class="banner-text">Ready to try something new, something Blue?</p>
+            <a class="banner-btn" href="https://www.blueorigin.com/careers/search?search=terawave" target="_blank" rel="noopener noreferrer">Make it happen</a>
+        </div>
+    </div>
     <div class="container">
         <h1 class="text-center mb-4">
             GPS Nanosecond Time Converter
