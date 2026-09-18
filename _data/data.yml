@@ -12,9 +12,9 @@ sidebar:
   stack-overflow: 2921949/andrew-diamond
 
 summary: |
-  Senior software engineer with 12+ years building high-quality, cross-domain software from real-time satellite network control planes to autonomous heavy-industry automation.
-  I thrive at the intersection of software and the physical world, designing systems that are reliable, observable, and built to perform under real conditions.
-  I focus on understanding root causes, raising the engineering bar, and creating environments where high quality work is the norm.
+  I build software for systems where failure has real consequences. Twelve years of production engineering — across autonomous industrial automation, real-time satellite network control, and one of the largest distributed storage platforms in the world — has taught me what it means to write code that actually has to work: in sand, in orbit, at scale.
+
+  At Amazon Leo, I own the data systems architecture for our satellite SDN — building the real-time telemetry platform that closes the loop between network planning and live failure response. At Covia, I built the software behind the highest-throughput sand mine in Texas, working hands-on with industrial engineers in the field. I raise the engineering bar wherever I work — mentoring teams, setting performance standards, and making sure every technical decision connects to the outcome it enables. Described as a serial overachiever. I'll take it.
 
 experiences:
   - role: Senior Software Engineer
@@ -22,13 +22,10 @@ experiences:
     details: |
       Data systems technical lead for the T-SDN organization; the go-to for architecture decisions, performance standards, and data intensive system design across the team.
 
-      Built the SDN's control plane interface from prototype to production, working closely with the SDN Agent team to develop the SDN's embedded presence in our devices, delivering network intent and distributing it across the constellation.
-
-      Built the observability platform from the ground up, processing gigabytes of network telemetry per second, closing the feedback loop between planning and execution so the system can react to failures in real time and minimize downtime.
-
-      Dove deep into device internals to identify and prioritize the most impactful telemetry to surface, directly tied to real operational problems.
-
-      Built search experiences backed by OpenSearch, enabling fast lookup across satellite, ground station, and customer terminal contact data in under 150ms round trip, sustaining that latency under thousands of concurrent clients.
+      - Took the SDN's control plane interface from prototype to production, working closely with the embedded team to develop the SDN's presence on our devices, delivering network intent and distributing it across the constellation.
+      - Built the observability platform from the ground up, processing gigabytes of network telemetry per second, closing the feedback loop between planning and execution so the system can react to failures in real time and minimize downtime.
+      - Dove deep into device internals to identify and prioritize the most impactful telemetry to surface, directly tied to real operational problems.
+      - Built search experiences backed by OpenSearch, enabling fast searches lookup across satellite, ground station, and customer terminal contact data in under 150ms round trip, sustaining that latency under thousands of concurrent clients using our observability tools
 
       Java, Rust, Go, TypeScript, C#, Python, Kafka, Kinesis, Apache Flink, OpenSearch, DynamoDB, S3, Athena, AWS
       {: .position-tech}
@@ -46,16 +43,14 @@ experiences:
   - role: Senior Technical Consultant
     subtitle: Robert Half Technology - April 2017 - May 2020
     details: |
-      On-staff consultant, placed the following clients for short to medium-term projects.
-      Presented at company sponsored events.
+      On-staff consultant, placed the following clients for short to medium-term projects. Presented at company sponsored events.
     contracts: |
       Perkins Coie
       {: .contract-company }
       February 2020 - May 2020
       {: .subtitle }
 
-        Hyper-optimized legal document processing workflows, improving throughput from 10 to 80+ documents/hr (8x improvement).
-        Delivered a proof-of-concept to augment the workflow with Computer Vision technologies.
+        Hyper-optimized legal document processing workflows, improving throughput from 10 to 80+ documents/hr. Delivered a proof-of-concept to augment the workflow with Computer Vision/AI technologies.
         {: .position-details}
 
         .NET Core, Javascript (Vue), SQL Server
@@ -66,22 +61,23 @@ experiences:
       June 2019 - February 2020
       {: .subtitle }
 
-        Designed and iteratively built an interactive Web UI to visually explore large graph datasets.
-        Managed devops and developer workflows for a small team utilizing Gitlab.
+        Designed built an interactive web UI to visually explore large graph datasets. Managed devops and developer workflows for a small team utilizing Gitlab.
         {: .position-details}
 
         AWS (lambda, ec2, s3, etc), Javascript (Express, React), ArangoDB, Python, Docker
         {: .position-tech}
+
+      <div class="page-break"></div>
 
       Covia
       {: .contract-company }
       November 2017 - May 2019
       {: .subtitle }
 
-        Designed and delivered the software behind the highest-throughput sand mine in Texas.
-        Worked hands-on with industrial engineers on-site to design an operator-facing UI built for real field conditions.
-        Built a multi-mode data synchronization system to keep the site operational regardless of local connectivity.
-        Designed CI/CD standards for SOX-compliant systems; reduced deployment effort from 2 days to fully automated, scaling to 45 independent sites. Interfaced with safety-critical systems to ensure correct product delivery.
+        - Designed and delivered the software behind the highest-throughput sand mine in Texas.
+        - Worked hands-on with industrial engineers on-site to design an operator-facing UI built for real field conditions.
+        - Built a multi-mode data synchronization system to keep the site operational regardless of local connectivity.
+        - Designed CI/CD standards for SOX-compliant systems; reduced deployment effort from 2 days to fully automated, scaling to 45 independent sites. Interfaced with safety-critical systems to ensure safe product delivery.
         {: .position-details}
 
         Azure DevOps, Swagger, ASP.NET Core, SQL Server
@@ -119,7 +115,7 @@ skills:
   toolset:
     - name: Distributed & Real-Time Systems
     - name: Observability & Telemetry
-    - name: Safety-Critical CI/CD
+    - name: CI/CD
     - name: Rust, Go, Java, C#, TypeScript
     - name: Kafka, Kinesis, Flink, OpenSearch
     - name: AWS, DynamoDB, S3, Athena

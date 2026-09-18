@@ -1,53 +1,203 @@
-@media print
-   {
-    @page {
-        size: A4;
-    }
-    body {
-       font-size: 10pt;
-    }
+@media print {
 
-   a[href]:after {
-      content: "";
-   }
+  @page {
+    size: letter;
+    margin: 0.65in;
+  }
 
-    img.avatar {
-      display: none;
-    }
-   .main-wrapper .time {
-       float: right;
-        color: black !important;
-        -webkit-print-color-adjust: exact;
-   }
-   .sidebar-wrapper {
-      position: static;
-      width: 30vw;
-      -webkit-print-color-adjust: exact;
-   }
-   .fa-stack,
-   .remove-container.container-block,
-   footer{
-      display: none;
-   }
-   .skillset .level-bar-inner {
-      background-color: white !important;
-      border: 1px solid black !important;
-      -webkit-print-color-adjust: exact;
-   }
-   .linkedin,
-   .stack-overflow {
-      display: none;
-   }
+  body {
+    font-size: 10pt;
+    background: white !important;
+  }
 
-   .website {
-      display: inherit;
-   }
+  // Never print link URLs inline
+  a[href]:after {
+    content: "" !important;
+  }
 
-   .main-wrapper {
-      padding: 0px !important;
-   }
+  // ── Kill the side-by-side flex layout ──────────────────────────────────
 
-   .section.experiences-section.summary {
-      display: none;
-   }  
+  .wrapper {
+    display: block !important;
+    background: white !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+  }
+
+  // ── Sidebar → compact header: name + contact + skills ──────────────────
+
+  .sidebar-wrapper {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: white !important;
+    color: #111 !important;
+    position: static !important;
+    padding: 0 0 8pt !important;
+    border-bottom: 1px solid #ccc !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  // Name
+  .sidebar-wrapper .profile-container {
+    background: transparent !important;
+    text-align: left !important;
+    padding: 0 0 3pt !important;
+  }
+
+  .sidebar-wrapper .name {
+    font-size: 26pt !important;
+    font-weight: 900 !important;
+    color: #111 !important;
+    margin: 0 0 2pt !important;
+  }
+
+  img.avatar {
+    display: none !important;
+  }
+
+  // Contact list as a single horizontal line
+  .sidebar-wrapper .contact-container {
+    padding: 0 !important;
+  }
+
+  .sidebar-wrapper .contact-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+
+  .sidebar-wrapper .contact-list li {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 9pt !important;
+    color: #555 !important;
+    margin: 0 !important;
+    white-space: nowrap;
+  }
+
+  .sidebar-wrapper .contact-list li + li::before {
+    content: "\00B7";
+    color: #bbb;
+    margin: 0 6pt;
+  }
+
+  .sidebar-wrapper .contact-list a {
+    color: #555 !important;
+    text-decoration: none !important;
+  }
+
+  // Prepend https:// to website link
+  .sidebar-wrapper .contact-list li.website a::before {
+    content: "https://";
+    color: #555 !important;
+  }
+
+  // Hide GitHub and Stack Overflow when printing
+  .sidebar-wrapper .contact-list li.github,
+  .sidebar-wrapper .contact-list li.stack-overflow {
+    display: none !important;
+  }
+
+  // Hide Font Awesome icons — text only in print
+  .sidebar-wrapper .contact-list .fas,
+  .sidebar-wrapper .contact-list .fab {
+    display: none !important;
+  }
+
+  // Skills — show compactly below contact line
+  .sidebar-wrapper .education-container {
+    display: block !important;
+    padding: 4pt 0 0 !important;
+  }
+
+  .sidebar-wrapper .container-block-title {
+    display: none !important;  // hide "Top Skills" label
+  }
+
+  .sidebar-wrapper .skillset {
+    padding: 0 !important;
+  }
+
+  .sidebar-wrapper .level-title {
+    font-size: 8.5pt !important;
+    color: #666 !important;
+    font-style: italic !important;
+  }
+
+  // ── Main content → full width ───────────────────────────────────────────
+
+  .main-wrapper {
+    width: 100% !important;
+    padding: 12pt 0 0 !important;
+  }
+
+  .main-wrapper .time {
+    float: right;
+    color: #444 !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .main-wrapper .upper-row {
+    margin-bottom: 0;
+  }
+
+  // ── Hide decorative / interactive chrome ───────────────────────────────
+
+  .fa-stack,
+  .remove-container.container-block,
+  footer {
+    display: none !important;
+  }
+
+  // Hide the "Hi, I'm Andrew Diamond" summary section
+  .section.experiences-section.summary {
+    display: none;
+  }
+
+  // ── Page break control ─────────────────────────────────────────────────
+
+  // Never orphan a job title at the bottom of a page
+  .experiences-section .meta {
+    break-after: avoid;
+  }
+
+  // Within contracts, allow page breaks between sub-entries but keep
+  // each company name attached to its date and description
+  p.contract-company {
+    break-after: avoid;
+  }
+
+  p.subtitle {
+    break-after: avoid;
+  }
+
+  // Tech stack line stays with the description above it
+  p.position-tech {
+    break-before: avoid;
+  }
+
+  // Keep at least 3 lines together at top/bottom of page
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  // Never break right after any section title
+  .section-title {
+    break-after: avoid;
+  }
+
+  // Explicit page break marker (used in data.yml contracts)
+  .page-break {
+    break-before: page;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
 }
