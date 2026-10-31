@@ -247,6 +247,26 @@
             margin: 0;
         }
 
+        .blue-origin-banner .banner-link {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .blue-origin-banner .banner-link:hover {
+            color: #cce0ff;
+        }
+
+        .blue-origin-banner .banner-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blue-origin-banner .banner-note {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
         .blue-origin-banner .banner-btn {
             background-color: #ffffff;
             color: #002856;
@@ -270,11 +290,25 @@
 
 <body>
     <div class="blue-origin-banner">
-        <div class="banner-inner">
+        <div class="banner-inner" id="banner-event">
+            <p class="banner-text">TeraWave networking happy hour &middot; Tue, Nov 3, 5:30&ndash;8:30pm &middot; <a class="banner-link" href="https://www.google.com/maps/search/?api=1&amp;query=Archer+Hotel+Redmond%2C+7200+164th+Ave+NE%2C+Redmond%2C+WA+98052" target="_blank" rel="noopener noreferrer">Archer Hotel Redmond</a> in Redmond Town Center</p>
+            <span class="banner-cta">
+                <a class="banner-btn" href="https://bit.ly/4A1Mwbt" target="_blank" rel="noopener noreferrer">Register</a>
+                <span class="banner-note">(or just show up)</span>
+            </span>
+        </div>
+        <div class="banner-inner" id="banner-jobs" style="display: none;">
             <p class="banner-text">Ready to try something new, something Blue?</p>
             <a class="banner-btn" href="https://www.blueorigin.com/careers/search?search=terawave" target="_blank" rel="noopener noreferrer">Make it happen</a>
         </div>
     </div>
+    <script>
+        // Revert to the jobs banner the evening after the happy hour (6pm PST, Wed Nov 4 2026)
+        if (Date.now() > Date.parse('2026-11-05T02:00:00Z')) {
+            document.getElementById('banner-event').style.display = 'none';
+            document.getElementById('banner-jobs').style.display = '';
+        }
+    </script>
     <div class="container">
         <h1 class="text-center mb-4">
             GPS Nanosecond Time Converter
